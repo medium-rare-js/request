@@ -1,0 +1,28 @@
+{
+  "presets": [
+    ["@babel/preset-env", {
+      "targets": {
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+      }
+    }],
+    ["@babel/preset-stage-0", {
+      "decoratorsLegacy": true
+    }]
+  ],
+  "plugins": [
+    "@babel/plugin-transform-runtime",
+    ["babel-plugin-module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "@": "./src"
+      }
+    }],
+    "@babel/plugin-transform-typescript"
+  ],
+  "env": {
+    "test": {
+      "presets": ["@babel/preset-env", "@babel/preset-stage-0"],
+      "plugins": ["dynamic-import-node"]
+    }
+  }
+}

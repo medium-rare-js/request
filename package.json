@@ -1,0 +1,50 @@
+{
+  "name": "@medium-rare/request",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "compile": "./node_modules/.bin/tsc --emitDeclarationOnly && ./node_modules/.bin/babel src --out-dir dist --extensions=\".ts\"",
+    "build": "npm run clean && npm run compile",
+    "test": "jest --config __tests__/jest.conf.js --coverage",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/medium-rare-js/request.git"
+  },
+  "keywords": [
+    "medium-rare"
+  ],
+  "author": "cyradin <cyradin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/medium-rare-js/request/issues"
+  },
+  "homepage": "https://github.com/medium-rare-js/request#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.49",
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-transform-runtime": "^7.0.0-beta.49",
+    "@babel/plugin-transform-typescript": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "@babel/preset-stage-0": "^7.0.0-beta.49",
+    "@medium-rare/common": "^1.0.1",
+    "@types/jest": "^23.0.0",
+    "@types/uniqid": "^4.1.2",
+    "babel-jest": "^23.0.1",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "jest": "^23.1.0",
+    "ts-jest": "^22.4.6",
+    "typescript": "^2.9.1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.0.0-beta.49",
+    "uniqid": "^5.0.3"
+  },
+  "files": [
+    "dist/*"
+  ]
+}
